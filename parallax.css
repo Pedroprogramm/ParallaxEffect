@@ -28,7 +28,8 @@
     transform-style: preserve-3d;
     transform: rotateX(var(--move-y)) rotateY(var(--move-x));
     will-change: transform;
-    transition: cubic-bezier(0,.78,1,.99);
+    transition: cubic-bezier(0,.59,1,.99);
+    transition-duration: 1s;
   }
   
   .layer {
