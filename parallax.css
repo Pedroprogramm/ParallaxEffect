@@ -1,0 +1,104 @@
+:root {
+    --move-x: 0;
+    --move-y: 0;
+  }
+  
+  @font-face {
+    font-family: kameric-3d;
+    src: url(../Parallax-effect/kamerik205-heavy.woff2);
+    font-weight: 900;
+}
+  html, body {
+    scroll-behavior: smooth;
+    font-family: kameric-3d;
+  }
+  
+  body {
+    margin: 0;
+    background-color: black;
+    overflow: hidden;
+    perspective: 1000px;
+  }
+  
+  .app {
+    position: relative;
+    top: 15vh;
+    height: 100vh;
+    min-height: 500px;
+    transform-style: preserve-3d;
+    transform: rotateX(var(--move-y)) rotateY(var(--move-x));
+    will-change: transform;
+    transition: cubic-bezier(0,.78,1,.99);
+  }
+  
+  .layer {
+    position: absolute;
+    inset: -5vw;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .layer-1 {
+    background-image: url(./img/layer-1.jpg);
+    transform: translateZ(-50px) scale(1.05);
+    width: calc(100% + 30%);
+    height: calc(100% + 30%);
+    top: -15%;
+    left: -15%; 
+  }
+  
+  .layer-2 {
+    background-image: url(./img/layer-2.png);
+    transform: translateZ(0px) scale(.9);
+    width: calc(100% + 20%);
+    height: calc(100% + 20%);
+    top: -10%;
+    left: -10%; 
+  }
+  
+.layer-3{
+    background-image: url(./img/layer-5.png);
+    transform: translateZ(80px) ;
+    width: 100%;
+    height: 100%;
+    top: -10%;
+}
+.rain{
+    transform: translateZ(100px);
+}
+.layer-4{
+    background-image: url(./img/layer-6.png);
+    transform: translateZ(190px);
+}
+.layer-txt {
+    top: -10%;
+    color: white;
+    font-size: 36px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    transform: translateZ(45px) scale(1.2);
+    
+}
+.header-text{
+    margin-bottom: 30px;
+}
+.btn{
+    width: 160px;
+    height: 50px;
+    border-radius: 50px;
+    color: white;
+    background-color: transparent;
+    transition-duration: 150ms;
+}
+.btn:hover {
+    border: 2px solid white;
+}
+.layer-3, .layer-4, .rain {
+    pointer-events: none;
+  }
+  
+  
